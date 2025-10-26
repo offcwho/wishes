@@ -44,13 +44,13 @@ export const WishesUpdateForm: React.FC<Props> = ({ item, onWishUpdated }) => {
                     <Controller
                         name="description"
                         control={control}
-                        defaultValue={item.description}
+                        defaultValue={item.title}
                         render={({ field }) => (
                             <RdyInput
                                 {...field}
-                                id="Description"
+                                id="description"
                                 label="Описание"
-                                error={errors.description?.message}
+                                error={errors.title?.message}
                                 rounded="2xl"
                                 className="border-0! bg-zinc-600!"
                                 backgroundColor={{
@@ -107,20 +107,20 @@ export const WishesUpdateForm: React.FC<Props> = ({ item, onWishUpdated }) => {
                             </RdySelect>
                         )}
                     />
-                    <div className="">
-                        <Controller
-                        name="isCompleted"
-                        control={control}
-                        render={({ field }) => (
-                            <RdyToggle 
-                                {...field}
-                            />
-                        )}/>
-                        
+                    <div className="mt-4 flex gap-2 items-center text-gray-300">
+                        <RdyToggle
+                            {...register('isCompleted')}
+                            background={{
+                                enabled: "green",
+                                disabled: ''
+                            }}
+                            className="bg-zinc-700!"
+                        />
+                        <span>Статус пожелания</span>
                     </div>
                     <p className="text-red-500">{errors.priority?.message && errors.priority?.message}</p>
                 </div>
-                <button type="submit" className="w-full">asdasd</button>
+                <button type="submit" className="w-full bg-white">asdasd</button>
             </form>
         </div>
     )
