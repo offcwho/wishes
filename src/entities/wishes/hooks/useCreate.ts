@@ -1,18 +1,18 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
-import { wishesSchema } from "../schemas/wishes.schema"
+import { wishesCreateSchema } from "../schemas/wishes.schema"
 import z from "zod";
 import { create } from "@/services/wishes.service";
 import { useModal, useToast } from "rdy-comp";
 
 export const useCreate = (onSuccess?: () => void) => {
     const { register, handleSubmit, control, reset, formState: { errors, isSubmitting } } = useForm({
-        resolver: zodResolver(wishesSchema),
+        resolver: zodResolver(wishesCreateSchema),
     });
     const { closeModal } = useModal();
     const { showToast } = useToast();
 
-    const onSubmit = async (data: z.infer<typeof wishesSchema>) => {
+    const onSubmit = async (data: z.infer<typeof wishesCreateSchema>) => {
         console.log('is submited')
         try {
             await create(data);

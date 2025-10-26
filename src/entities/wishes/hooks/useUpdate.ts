@@ -14,6 +14,7 @@ export const useUpdate = (id: string, onSuccess?: () => void) => {
 
     const onSubmit = async (data: z.infer<typeof wishesSchema>) => {
         console.log('is submited')
+        console.log(data)
         try {
             await update(id, data);
             showToast({

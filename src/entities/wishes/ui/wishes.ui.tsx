@@ -50,7 +50,7 @@ export const WishesUi: React.FC<Props> = () => {
         <div className="">
             <ul className="grid grid-cols-3 gap-3">
                 <li
-                    className="group border border-dashed rounded-xl border-zinc-600 flex items-center justify-center hover:border-zinc-400 transition-all duration-300 bg-zinc-800"
+                    className="group border py-10 border-dashed rounded-xl border-zinc-600 flex items-center justify-center hover:border-zinc-400 transition-all duration-300 bg-zinc-800"
                     onClick={() => openModal('create')}
                 >
                     <div className="border border-dashed rounded-full p-4 border-zinc-600 text-zinc-600 group-hover:border-zinc-400 group-hover:text-zinc-400 group-hover:scale-[1.10] transition-all duration-300">

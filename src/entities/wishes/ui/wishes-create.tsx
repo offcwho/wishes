@@ -110,7 +110,7 @@ export const WishesCreateUi: React.FC<Props> = ({ onWishCreated }) => {
                         />
                         <p className="text-red-500">{errors.priority?.message && errors.priority?.message}</p>
                     </div>
-                    <button type="submit" className="w-full">asdasd</button>
+                    <button type="submit" className="w-full bg-white" onClick={() => handleSubmit(onSubmit)}>asdasd</button>
                 </form>
             </div>
         </RdyModal>
