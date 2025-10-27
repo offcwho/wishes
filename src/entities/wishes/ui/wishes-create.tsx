@@ -1,4 +1,4 @@
-import { RdyInput, RdyModal, RdyOption, RdySelect } from "rdy-comp"
+import { RdyButton, RdyInput, RdyModal, RdyOption, RdySelect } from "rdy-comp"
 import { Controller } from "react-hook-form"
 import { WISHES_PRIORITY_DATA } from "../module/priority.data"
 import { useCreate } from "../hooks/useCreate"
@@ -110,7 +110,7 @@ export const WishesCreateUi: React.FC<Props> = ({ onWishCreated }) => {
                         />
                         <p className="text-red-500">{errors.priority?.message && errors.priority?.message}</p>
                     </div>
-                    <button type="submit" className="w-full bg-white" onClick={() => handleSubmit(onSubmit)}>asdasd</button>
+                    <RdyButton className="w-full rounded-xl! bg-sky-600! hover:bg-sky-600/60! text-gray-100! transition-colors">Сохранить</RdyButton>
                 </form>
             </div>
         </RdyModal>

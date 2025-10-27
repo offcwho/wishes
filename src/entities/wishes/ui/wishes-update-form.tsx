@@ -121,8 +121,7 @@ export const WishesUpdateForm: React.FC<Props> = ({ item, onWishUpdated }) => {
                     </div>
                     <p className="text-red-500">{errors.priority?.message && errors.priority?.message}</p>
                 </div>
-                <RdyButton>Сохранить</RdyButton>
-                <button type="submit" className="w-full bg-white">asdasd</button>
+                <RdyButton className="w-full rounded-xl! bg-sky-600! hover:bg-sky-600/60! text-gray-100! transition-colors">Сохранить</RdyButton>
             </form>
         </div>
     )
