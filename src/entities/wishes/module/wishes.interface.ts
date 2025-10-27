@@ -4,7 +4,7 @@ export interface WishesType {
     description: string;
     link: string;
     isCompleted: boolean;
-    priority: 'low' | 'medium' | 'high'
+    priority: 'LOW' | 'MEDIUM' | 'HIGH'
     user: {
         id: number;
         name: string;

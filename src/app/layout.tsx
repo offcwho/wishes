@@ -2,7 +2,8 @@
 
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { ModalProvider, ToastProvider } from "rdy-comp";
+import { Header } from "@/components/ui/header";
+import Providers from "@/components/providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,12 +24,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ToastProvider>
-          <ModalProvider>
+        <Providers>
+          <>
+            <Header />
             {children}
-          </ModalProvider>
-        </ToastProvider>
-      </body>
-    </html>
+          </>
+        </Providers>
+
+      </body >
+    </html >
   );
 }

@@ -6,6 +6,8 @@ export const API_ROUTE = {
     auth: {
         register: () => API_ROUTE.root('/auth/register'),
         login: () => API_ROUTE.root('/auth/login'),
+        user: () => API_ROUTE.root('/auth/user'),
+        logout: () => API_ROUTE.root('/auth/logout'),
     },
 
     wishes: {

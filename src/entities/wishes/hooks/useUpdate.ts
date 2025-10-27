@@ -3,13 +3,14 @@ import { useForm } from "react-hook-form"
 import { wishesSchema } from "../schemas/wishes.schema"
 import z from "zod";
 import { update } from "@/services/wishes.service";
-import { useToast } from "rdy-comp";
+import { useModal, useToast } from "rdy-comp";
 import { useState } from "react";
 
 export const useUpdate = (id: string, onSuccess?: () => void) => {
     const { register, handleSubmit, control, formState: { errors, isSubmitting } } = useForm({
         resolver: zodResolver(wishesSchema),
     });
+    const { closeModal } = useModal();
     const { showToast } = useToast();
 
     const onSubmit = async (data: z.infer<typeof wishesSchema>) => {
@@ -21,6 +22,7 @@ export const useUpdate = (id: string, onSuccess?: () => void) => {
                 title: "Желание успешно обновленно",
                 type: 'success'
             });
+            closeModal(id)
             onSuccess?.()
         } catch (err: any) {
             if (err) {

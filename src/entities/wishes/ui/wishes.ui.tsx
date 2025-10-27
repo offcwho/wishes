@@ -45,10 +45,10 @@ export const WishesUi: React.FC<Props> = () => {
     const handleWishCreated = () => {
         fetchData();
     };
-
     return (
         <div className="">
-            <ul className="grid grid-cols-3 gap-3">
+            <h1 className="text-5xl text-center pt-15 border-b-2 pb-6">Your wishes</h1>
+            <ul className="grid grid-cols-3 pt-15 gap-3">
                 <li
                     className="group border py-10 border-dashed rounded-xl border-zinc-600 flex items-center justify-center hover:border-zinc-400 transition-all duration-300 bg-zinc-800"
                     onClick={() => openModal('create')}
@@ -74,13 +74,15 @@ export const WishesUi: React.FC<Props> = () => {
                             }}
                         >
                             <div
-                                className="p-3 w-full"
+                                className="p-3 w-full justify-between flex flex-col "
                                 onClick={() => openModal(String(item.id))}
                             >
-                                <h3 className="text-2xl">{item.title}</h3>
-                                <p className="text-md mb-3">{item.description}</p>
+                                <div className="">
+                                    <h3 className="text-2xl">{item.title}</h3>
+                                    <p className="text-md mb-3">{item.description}</p>
+                                </div>
                                 <div className="flex justify-start items-center gap-2">
-                                    <div className="px-4 py-1 bg-gray-700 rounded-xl text-gray-10">
+                                    <div className={`${item.priority === 'LOW' ? 'bg-green-400' : item.priority === 'MEDIUM' ? 'bg-yellow-400' : item.priority === 'HIGH' && 'bg-red-500'}  px-4 py-1 bg-gray-600 rounded-xl text-gray-10`}>
                                         {item.priority}
                                     </div>
                                     <div className={`flex items-center justify-center p-1 w-fit rounded-full ${item.isCompleted ? 'bg-green-500' : 'bg-red-500'}`}>

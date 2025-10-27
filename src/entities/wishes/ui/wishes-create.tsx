@@ -4,7 +4,7 @@ import { WISHES_PRIORITY_DATA } from "../module/priority.data"
 import { useCreate } from "../hooks/useCreate"
 
 interface Props {
-  onWishCreated?: () => void;
+    onWishCreated?: () => void;
 }
 
 export const WishesCreateUi: React.FC<Props> = ({ onWishCreated }) => {

@@ -1,7 +1,8 @@
 import { remove } from "@/services/wishes.service"
-import { useToast } from "rdy-comp"
+import { useModal, useToast } from "rdy-comp"
 
 export const useDelete = () => {
+    const { closeModal } = useModal();
     const { showToast } = useToast();
 
     const handleClick = async (id: string) => {

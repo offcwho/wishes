@@ -1,5 +1,5 @@
 import { Controller } from "react-hook-form";
-import { RdyInput, RdySelect, RdyOption, RdyButton, RdyToggle } from "rdy-comp";
+import { RdyInput, RdySelect, RdyOption, RdyButton, RdyToggle, useModal } from "rdy-comp";
 import { useUpdate } from "../hooks/useUpdate";
 import { WISHES_PRIORITY_DATA } from "../module/priority.data";
 import { PriorityEnum, WishesType } from "../module/wishes.interface";
@@ -10,6 +10,7 @@ interface Props {
 }
 
 export const WishesUpdateForm: React.FC<Props> = ({ item, onWishUpdated }) => {
+    const { closeModal } = useModal();
     const { register, handleSubmit, onSubmit, errors, control } = useUpdate(String(item.id), onWishUpdated);
 
     return (
@@ -120,6 +121,7 @@ export const WishesUpdateForm: React.FC<Props> = ({ item, onWishUpdated }) => {
                     </div>
                     <p className="text-red-500">{errors.priority?.message && errors.priority?.message}</p>
                 </div>
+                <RdyButton>Сохранить</RdyButton>
                 <button type="submit" className="w-full bg-white">asdasd</button>
             </form>
         </div>
